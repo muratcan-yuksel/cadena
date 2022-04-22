@@ -25,9 +25,8 @@ contract Bank {
     }
 
     function withdrawMoney(address payable _to, uint256 _total) public {
-    	require(msg.sender == bankOwner, "You must be the owner to make withdrawals")
-        require(
-            _total <= customerBalance[msg.sender],
+    	require(msg.sender == bankOwner, "You must be the owner to make withdrawals");
+        require( _total <= customerBalance[msg.sender],
             "You have insuffient funds to withdraw"
         );
 
